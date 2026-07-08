@@ -103,7 +103,7 @@ export default function LoginPage() {
           {/* Wordmark above card */}
           <div className="mb-8 text-center">
             <p className="font-code font-semibold tracking-widest text-base uppercase" style={{ color: 'var(--accent)' }}>
-              🔧 Torque Auto Parts
+              🔧 MCR Autos
             </p>
             <p className="font-code text-xs mt-1" style={{ color: 'var(--text-3)' }}>
               Quality Car Parts Online

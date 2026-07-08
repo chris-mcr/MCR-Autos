@@ -73,7 +73,7 @@ export default function NotFound() {
 
           {/* Easter Egg */}
           <p className="text-slate-500 text-xs mt-8">
-            🔧 Torque Auto Parts
+            🔧 MCR Autos
           </p>
         </div>
       </div>

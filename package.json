@@ -1,7 +1,7 @@
 {
-  "name": "torque-auto-parts",
+  "name": "mcr-autos",
   "version": "1.0.0",
-  "description": "Torque Auto Parts — online car parts store",
+  "description": "MCR Autos — online car parts store",
   "private": true,
   "scripts": {
     "dev": "next dev",

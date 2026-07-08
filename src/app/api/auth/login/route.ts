@@ -5,154 +5,154 @@ import { NextRequest, NextResponse } from "next/server";
   string,
   { id: string; name: string; email: string; password: string }
 > = {
-  "chris@torqueautoparts.com": {
+  "chris@mcrautos.com": {
     id: "user-1",
     name: "Chris",
-    email: "chris@torqueautoparts.com",
-    password: "Torque@2024",
+    email: "chris@mcrautos.com",
+    password: "MCR@2024",
   },
-  "alice.johnson@torqueautoparts.com": {
+  "alice.johnson@mcrautos.com": {
     id: "user-2",
     name: "Alice",
-    email: "alice.johnson@torqueautoparts.com",
+    email: "alice.johnson@mcrautos.com",
     password: "SecurePass#1",
   },
-  "bob.smith@torqueautoparts.com": {
+  "bob.smith@mcrautos.com": {
     id: "user-3",
     name: "Bob",
-    email: "bob.smith@torqueautoparts.com",
+    email: "bob.smith@mcrautos.com",
     password: "BobPass$2024",
   },
-  "carol.williams@torqueautoparts.com": {
+  "carol.williams@mcrautos.com": {
     id: "user-4",
     name: "Carol",
-    email: "carol.williams@torqueautoparts.com",
+    email: "carol.williams@mcrautos.com",
     password: "CarolKey@123",
   },
-  "david.brown@torqueautoparts.com": {
+  "david.brown@mcrautos.com": {
     id: "user-5",
     name: "David",
-    email: "david.brown@torqueautoparts.com",
+    email: "david.brown@mcrautos.com",
     password: "DavidPwd#99",
   },
-  "emma.davis@torqueautoparts.com": {
+  "emma.davis@mcrautos.com": {
     id: "user-6",
     name: "Emma",
-    email: "emma.davis@torqueautoparts.com",
+    email: "emma.davis@mcrautos.com",
     password: "EmmaSecure$1",
   },
-  "frank.miller@torqueautoparts.com": {
+  "frank.miller@mcrautos.com": {
     id: "user-7",
     name: "Frank",
-    email: "frank.miller@torqueautoparts.com",
+    email: "frank.miller@mcrautos.com",
     password: "FrankCode@456",
   },
-  "grace.wilson@torqueautoparts.com": {
+  "grace.wilson@mcrautos.com": {
     id: "user-8",
     name: "Grace",
-    email: "grace.wilson@torqueautoparts.com",
+    email: "grace.wilson@mcrautos.com",
     password: "GracePass#2024",
   },
-  "henry.moore@torqueautoparts.com": {
+  "henry.moore@mcrautos.com": {
     id: "user-9",
     name: "Henry",
-    email: "henry.moore@torqueautoparts.com",
+    email: "henry.moore@mcrautos.com",
     password: "HenryKey@789",
   },
-  "isabella.taylor@torqueautoparts.com": {
+  "isabella.taylor@mcrautos.com": {
     id: "user-10",
     name: "Isabella",
-    email: "isabella.taylor@torqueautoparts.com",
+    email: "isabella.taylor@mcrautos.com",
     password: "IsabellaAuth#1",
   },
-  "james.anderson@torqueautoparts.com": {
+  "james.anderson@mcrautos.com": {
     id: "user-11",
     name: "James",
-    email: "james.anderson@torqueautoparts.com",
+    email: "james.anderson@mcrautos.com",
     password: "JamesKey@2024",
   },
-  "katherine.thomas@torqueautoparts.com": {
+  "katherine.thomas@mcrautos.com": {
     id: "user-12",
     name: "Katherine",
-    email: "katherine.thomas@torqueautoparts.com",
+    email: "katherine.thomas@mcrautos.com",
     password: "KatherinePass#99",
   },
-  "liam.jackson@torqueautoparts.com": {
+  "liam.jackson@mcrautos.com": {
     id: "user-13",
     name: "Liam",
-    email: "liam.jackson@torqueautoparts.com",
+    email: "liam.jackson@mcrautos.com",
     password: "LiamCode$123",
   },
-  "mia.white@torqueautoparts.com": {
+  "mia.white@mcrautos.com": {
     id: "user-14",
     name: "Mia",
-    email: "mia.white@torqueautoparts.com",
+    email: "mia.white@mcrautos.com",
     password: "MiaSecure@456",
   },
-  "noah.harris@torqueautoparts.com": {
+  "noah.harris@mcrautos.com": {
     id: "user-15",
     name: "Noah",
-    email: "noah.harris@torqueautoparts.com",
+    email: "noah.harris@mcrautos.com",
     password: "NoahPwd#789",
   },
-  "olivia.martin@torqueautoparts.com": {
+  "olivia.martin@mcrautos.com": {
     id: "user-16",
     name: "Olivia",
-    email: "olivia.martin@torqueautoparts.com",
+    email: "olivia.martin@mcrautos.com",
     password: "OliviaKey@2024",
   },
-  "parker.thompson@torqueautoparts.com": {
+  "parker.thompson@mcrautos.com": {
     id: "user-17",
     name: "Parker",
-    email: "parker.thompson@torqueautoparts.com",
+    email: "parker.thompson@mcrautos.com",
     password: "ParkerAuth#55",
   },
-  "quinn.garcia@torqueautoparts.com": {
+  "quinn.garcia@mcrautos.com": {
     id: "user-18",
     name: "Quinn",
-    email: "quinn.garcia@torqueautoparts.com",
+    email: "quinn.garcia@mcrautos.com",
     password: "QuinnPass$2024",
   },
-  "rachel.martinez@torqueautoparts.com": {
+  "rachel.martinez@mcrautos.com": {
     id: "user-19",
     name: "Rachel",
-    email: "rachel.martinez@torqueautoparts.com",
+    email: "rachel.martinez@mcrautos.com",
     password: "RachelCode@111",
   },
-  "samuel.robinson@torqueautoparts.com": {
+  "samuel.robinson@mcrautos.com": {
     id: "user-20",
     name: "Samuel",
-    email: "samuel.robinson@torqueautoparts.com",
+    email: "samuel.robinson@mcrautos.com",
     password: "SamuelKey#2024",
   },
-  "teresa.clark@torqueautoparts.com": {
+  "teresa.clark@mcrautos.com": {
     id: "user-21",
     name: "Teresa",
-    email: "teresa.clark@torqueautoparts.com",
+    email: "teresa.clark@mcrautos.com",
     password: "TeresaPass@777",
   },
-  "underwood.rodriguez@torqueautoparts.com": {
+  "underwood.rodriguez@mcrautos.com": {
     id: "user-22",
     name: "Underwood",
-    email: "underwood.rodriguez@torqueautoparts.com",
+    email: "underwood.rodriguez@mcrautos.com",
     password: "UnderCode$999",
   },
-  "victoria.lewis@torqueautoparts.com": {
+  "victoria.lewis@mcrautos.com": {
     id: "user-23",
     name: "Victoria",
-    email: "victoria.lewis@torqueautoparts.com",
+    email: "victoria.lewis@mcrautos.com",
     password: "VictoriaAuth#88",
   },
-  "william.walker@torqueautoparts.com": {
+  "william.walker@mcrautos.com": {
     id: "user-24",
     name: "William",
-    email: "william.walker@torqueautoparts.com",
+    email: "william.walker@mcrautos.com",
     password: "WilliamKey@333",
   },
-  "xavier.hall@torqueautoparts.com": {
+  "xavier.hall@mcrautos.com": {
     id: "user-25",
     name: "Xavier",
-    email: "xavier.hall@torqueautoparts.com",
+    email: "xavier.hall@mcrautos.com",
     password: "XavierPass#444",
   },
 };

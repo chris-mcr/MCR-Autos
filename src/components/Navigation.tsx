@@ -69,9 +69,9 @@ export default function Navigation({
             >
               <span className="text-lg" aria-hidden="true">🔧</span>
               <span className="font-code font-semibold tracking-widest text-sm uppercase" style={{ color: 'var(--accent)' }}>
-                Torque
+                MCR
               </span>
-              <span className="font-code text-sm" style={{ color: 'var(--text-3)' }}>auto parts</span>
+              <span className="font-code text-sm" style={{ color: 'var(--text-3)' }}>autos</span>
             </button>
           </div>
 

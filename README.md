@@ -1,4 +1,4 @@
-# Torque Auto Parts
+# MCR Autos
 
 An online car parts store — browse and search parts by category, view product detail, manage a cart, and check out. Built with Next.js and TypeScript.
 
@@ -24,8 +24,8 @@ The app runs at [http://localhost:3000](http://localhost:3000).
 
 A set of demo customer accounts is defined in `src/app/api/auth/login/route.ts`.
 
-- Email: `chris@torqueautoparts.com`
-- Password: `Torque@2024`
+- Email: `chris@mcrautos.com`
+- Password: `MCR@2024`
 
 ## Project structure
 

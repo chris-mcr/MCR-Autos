@@ -22,19 +22,19 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Torque Auto Parts — Quality Car Parts Online",
-  description: "Torque Auto Parts stocks brakes, filters, electrical, engine, suspension and exterior parts for every make and model. Fast shipping, trade prices.",
-  metadataBase: new URL("https://torqueautoparts.com"),
+  title: "MCR Autos — Quality Car Parts Online",
+  description: "MCR Autos stocks brakes, filters, electrical, engine, suspension and exterior parts for every make and model. Fast shipping, trade prices.",
+  metadataBase: new URL("https://mcrautos.com"),
   openGraph: {
-    title: "Torque Auto Parts — Quality Car Parts Online",
+    title: "MCR Autos — Quality Car Parts Online",
     description: "Brakes, filters, electrical, engine, suspension and exterior parts for every make and model. Fast shipping, trade prices.",
-    url: "https://torqueautoparts.com",
+    url: "https://mcrautos.com",
     type: "website",
-    siteName: "Torque Auto Parts",
+    siteName: "MCR Autos",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Torque Auto Parts — Quality Car Parts Online",
+    title: "MCR Autos — Quality Car Parts Online",
     description: "Brakes, filters, electrical, engine, suspension and exterior parts for every make and model. Fast shipping, trade prices.",
   },
   keywords: ["car parts", "auto parts", "brakes", "filters", "spark plugs", "car battery", "vehicle spares"],

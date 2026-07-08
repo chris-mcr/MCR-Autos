@@ -96,7 +96,7 @@ export default function Home() {
                 Every time.
               </h2>
               <p className="text-lg max-w-md mb-10" style={{ color: 'var(--text-2)' }}>
-                Torque Auto Parts stocks brakes, filters, electrical, engine, suspension and exterior parts for every make and model — at trade prices.
+                MCR Autos stocks brakes, filters, electrical, engine, suspension and exterior parts for every make and model — at trade prices.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/login" className="btn-amber" data-testid="get-started-button">
@@ -152,7 +152,7 @@ export default function Home() {
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
               <div className="mb-14 anim-fade-up">
                 <p className="font-code text-xs tracking-widest uppercase mb-3" style={{ color: 'var(--accent)' }}>
-                  Why Torque
+                  Why MCR
                 </p>
                 <h3 className="font-display text-4xl" style={{ color: 'var(--text-1)' }}>
                   Everything you need to<br />service and repair your car.
@@ -186,7 +186,7 @@ export default function Home() {
       <footer className="py-8" style={{ borderTop: '1px solid var(--edge)' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
           <span className="font-code text-xs" style={{ color: 'var(--text-3)' }}>
-            🔧 TORQUE AUTO PARTS
+            🔧 MCR AUTOS
           </span>
           <p className="text-xs" style={{ color: 'var(--text-3)' }}>
             Quality car parts · Fast UK delivery

@@ -190,8 +190,8 @@ export default function ProductPage() {
             aria-label="Go to home page"
           >
             <span className="text-lg" aria-hidden="true">🔧</span>
-            <span className="font-code font-semibold tracking-widest text-sm uppercase" style={{ color: 'var(--accent)' }}>Torque</span>
-            <span className="font-code text-sm" style={{ color: 'var(--text-3)' }}>auto parts</span>
+            <span className="font-code font-semibold tracking-widest text-sm uppercase" style={{ color: 'var(--accent)' }}>MCR</span>
+            <span className="font-code text-sm" style={{ color: 'var(--text-3)' }}>autos</span>
           </button>
           <div className="flex items-center gap-4">
             <CartButton />
