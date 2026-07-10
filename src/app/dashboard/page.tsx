@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import React from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Navigation from "@/components/Navigation";
 
@@ -320,7 +321,7 @@ export default function DashboardPage() {
                                 {order.items && order.items.length > 0 ? order.items.map((item) => (
                                   <div key={item.id} className="flex justify-between items-center p-3 rounded text-sm" style={{ background: 'var(--bg-surface)' }}>
                                     <div className="flex items-center gap-3">
-                                      <img src={item.image} alt={item.title} className="w-8 h-8 rounded object-cover" style={{ background: 'var(--bg-overlay)' }} />
+                                      <Image src={item.image} alt={item.title} width={32} height={32} className="w-8 h-8 rounded object-cover" style={{ background: 'var(--bg-overlay)' }} />
                                       <div>
                                         <p className="font-medium" style={{ color: 'var(--text-1)' }}>{item.title}</p>
                                         <p className="text-xs font-code" style={{ color: 'var(--text-3)' }}>{item.category}</p>
@@ -365,8 +366,8 @@ export default function DashboardPage() {
                   data-testid={`item-${item.id}`}
                   className="card overflow-hidden hover-border-accent transition-all hover:-translate-y-0.5 text-left cursor-pointer"
                 >
-                  <div className="h-32 overflow-hidden" style={{ background: 'var(--bg-overlay)' }}>
-                    <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                  <div className="relative h-32 overflow-hidden" style={{ background: 'var(--bg-overlay)' }}>
+                    <Image src={item.image} alt={item.title} fill sizes="(min-width:640px) 25vw, 50vw" className="object-cover" />
                   </div>
                   <div className="p-4">
                     <p className="text-xs font-code uppercase tracking-wide mb-1" style={{ color: 'var(--accent)' }}>{item.category}</p>
@@ -396,7 +397,7 @@ export default function DashboardPage() {
                 >
                   <button onClick={() => router.push(`/product/${item.id}`)} className="absolute inset-0 z-0 cursor-pointer" data-testid={`favorite-card-${item.id}`} />
                   <div className="h-32 overflow-hidden relative" style={{ background: 'var(--bg-overlay)' }}>
-                    <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                    <Image src={item.image} alt={item.title} fill sizes="(min-width:640px) 25vw, 50vw" className="object-cover" />
                     <button
                       onClick={(e) => { e.stopPropagation(); handleRemoveFavorite(item.id); }}
                       data-testid={`remove-favorite-${item.id}`}

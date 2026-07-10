@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Navigation from "@/components/Navigation";
 import { products, categories, type Product as Item } from "@/lib/products";
@@ -218,11 +219,12 @@ export default function ShopPage() {
                     className="h-44 flex items-center justify-center relative overflow-hidden"
                     style={{ background: 'var(--bg-overlay)' }}
                   >
-                    <img
+                    <Image
                       src={item.image}
                       alt={item.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover"
+                      fill
+                      sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw"
+                      className="object-cover"
                     />
                     {/* Favorite button */}
                     <button

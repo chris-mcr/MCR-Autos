@@ -9,7 +9,7 @@ import { NextRequest, NextResponse } from "next/server";
     id: "user-1",
     name: "Chris",
     email: "chris@mcrautos.com",
-    password: "MCR@2024",
+    password: "password123",
   },
   "alice.johnson@mcrautos.com": {
     id: "user-2",

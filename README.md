@@ -1,6 +1,6 @@
 # MCR Autos
 
-An online car parts store — browse and search parts by category, view product detail, manage a cart, and check out. Built with Next.js and TypeScript.
+An online car parts store — find parts by vehicle make/model, browse and search by category, view product detail, manage a cart, and check out. The homepage is built from reusable components (part finder, featured-parts carousel, category grid, reviews carousel, FAQ accordion). Built with Next.js and TypeScript.
 
 ## Getting started
 
@@ -25,7 +25,7 @@ The app runs at [http://localhost:3000](http://localhost:3000).
 A set of demo customer accounts is defined in `src/app/api/auth/login/route.ts`.
 
 - Email: `chris@mcrautos.com`
-- Password: `MCR@2024`
+- Password: `password123`
 
 ## Project structure
 
@@ -33,16 +33,17 @@ A set of demo customer accounts is defined in `src/app/api/auth/login/route.ts`.
 |---|---|
 | `src/app/` | App Router pages (`/`, `/login`, `/shop`, `/product/[id]`, `/cart`, `/dashboard`, `/account`) |
 | `src/app/api/` | API routes for auth, cart, orders, favourites and recently viewed items |
-| `src/components/` | Shared UI components (navigation, cart button) |
+| `src/components/` | Shared UI components — navigation, cart button, carousel, part finder, accordion, icons |
 | `src/lib/products.ts` | The product catalogue — single source of truth for all parts |
+| `src/lib/vehicles.ts` | Make/model data for the homepage part finder |
 | `src/lib/firebase*.ts` | Optional Firebase persistence |
-| `public/products/` | Product images |
+| `public/parts-images/` | Product, category and hero images |
 
 ## The catalogue
 
 All products live in `src/lib/products.ts`. Each part has an `id`, `title`, `price`, `category`, `image`, `description`, `rating` and `stock`. Add or edit a product there and it appears across the shop, product detail, cart and dashboard automatically.
 
-Product images are in `public/products/` and referenced by the `image` field. Drop in a replacement image at the same path to swap the artwork for a part.
+Product images live in `public/parts-images/` and are referenced by each part's `image` field (e.g. `/parts-images/brakepads.webp`). Drop in a replacement at the same path, or repoint the `image` field, to swap the artwork for a part — no code changes needed. Images are rendered with `next/image`.
 
 ## Data persistence
 

@@ -3,6 +3,8 @@ export interface Product {
   title: string;
   price: number;
   category: string;
+  // Path under /public (e.g. "/parts-images/brakepads.webp"). Swap the file
+  // or repoint this to change a product photo — no code changes needed.
   image: string;
   description: string;
   rating: number;
@@ -25,7 +27,7 @@ export const products: Product[] = [
     title: "Front Brake Pads (Set of 4)",
     price: 42.99,
     category: "Brakes",
-    image: "/products/item-1.svg",
+    image: "/parts-images/brakepads.webp",
     description:
       "Ceramic front brake pads engineered for low dust and quiet, fade-free stopping. Includes wear indicators and fitting shims. Suitable for a wide range of makes and models.",
     rating: 4.7,
@@ -36,7 +38,7 @@ export const products: Product[] = [
     title: "Brake Discs (Pair)",
     price: 89.99,
     category: "Brakes",
-    image: "/products/item-2.svg",
+    image: "/parts-images/brakediscs.webp",
     description:
       "Vented and anti-corrosion coated brake discs for even heat dissipation and long service life. Precision machined for smooth, vibration-free braking.",
     rating: 4.6,
@@ -47,7 +49,7 @@ export const products: Product[] = [
     title: "Oil Filter",
     price: 8.99,
     category: "Filters",
-    image: "/products/item-3.svg",
+    image: "/parts-images/oilfilter.webp",
     description:
       "High-flow spin-on oil filter with an anti-drain-back valve to protect your engine on cold starts. Traps contaminants down to 20 microns.",
     rating: 4.8,
@@ -58,7 +60,7 @@ export const products: Product[] = [
     title: "Air Filter",
     price: 14.99,
     category: "Filters",
-    image: "/products/item-4.svg",
+    image: "/parts-images/airfilter.webp",
     description:
       "Pleated panel air filter that maximises airflow while blocking dust and debris. Helps maintain fuel economy and engine performance.",
     rating: 4.5,
@@ -69,7 +71,7 @@ export const products: Product[] = [
     title: "Cabin Pollen Filter",
     price: 12.49,
     category: "Filters",
-    image: "/products/item-5.svg",
+    image: "/parts-images/pollenfilter.webp",
     description:
       "Activated-carbon cabin filter that removes pollen, dust and odours for cleaner air inside your vehicle. Quick and easy to fit.",
     rating: 4.4,
@@ -80,7 +82,7 @@ export const products: Product[] = [
     title: "Spark Plugs (Set of 4)",
     price: 24.99,
     category: "Engine",
-    image: "/products/item-6.svg",
+    image: "/parts-images/spark.webp",
     description:
       "Iridium spark plugs for reliable ignition, smoother idling and improved fuel efficiency. Long service life and pre-gapped for easy installation.",
     rating: 4.9,
@@ -91,7 +93,7 @@ export const products: Product[] = [
     title: "Timing Belt Kit",
     price: 74.99,
     category: "Engine",
-    image: "/products/item-7.svg",
+    image: "/parts-images/belt.webp",
     description:
       "Complete timing belt kit including belt and tensioner. Reinforced construction for accurate valve timing and dependable, long-term performance.",
     rating: 4.6,
@@ -102,7 +104,7 @@ export const products: Product[] = [
     title: "Engine Oil 5W-30 (5L)",
     price: 34.99,
     category: "Engine",
-    image: "/products/item-8.svg",
+    image: "/parts-images/oil.webp",
     description:
       "Fully synthetic 5W-30 engine oil for excellent wear protection and cold-start flow. Meets leading manufacturer specifications.",
     rating: 4.8,
@@ -113,7 +115,7 @@ export const products: Product[] = [
     title: "Car Battery 12V 60Ah",
     price: 89.99,
     category: "Electrical",
-    image: "/products/item-9.svg",
+    image: "/parts-images/battery.webp",
     description:
       "Maintenance-free 12V 60Ah battery with high cold-cranking amps for confident starting in all conditions. Fitted with carry handle and 4-year guarantee.",
     rating: 4.7,
@@ -124,7 +126,7 @@ export const products: Product[] = [
     title: "Alternator",
     price: 149.99,
     category: "Electrical",
-    image: "/products/item-10.svg",
+    image: "/parts-images/alternator.webp",
     description:
       "Remanufactured alternator tested to OE standards for consistent charging output. Direct replacement fit with a 2-year warranty.",
     rating: 4.5,
@@ -135,7 +137,7 @@ export const products: Product[] = [
     title: "Headlight Bulbs (Pair)",
     price: 19.99,
     category: "Electrical",
-    image: "/products/item-11.svg",
+    image: "/parts-images/bulb.webp",
     description:
       "H7 halogen headlight bulbs with up to 30% brighter output for improved night-time visibility. Sold as a matched pair.",
     rating: 4.4,
@@ -146,7 +148,7 @@ export const products: Product[] = [
     title: "Front Shock Absorber",
     price: 64.99,
     category: "Suspension",
-    image: "/products/item-12.svg",
+    image: "/parts-images/shock.webp",
     description:
       "Gas-charged front shock absorber for controlled damping, improved handling and a comfortable ride. Corrosion-resistant finish.",
     rating: 4.6,
@@ -157,7 +159,7 @@ export const products: Product[] = [
     title: "Coil Spring",
     price: 39.99,
     category: "Suspension",
-    image: "/products/item-13.svg",
+    image: "/parts-images/spring.webp",
     description:
       "Cold-wound coil spring built to OE ride height and load ratings. Powder-coated to resist corrosion and stone chips.",
     rating: 4.3,
@@ -168,7 +170,7 @@ export const products: Product[] = [
     title: "Wiper Blades (Pair)",
     price: 16.99,
     category: "Exterior",
-    image: "/products/item-14.svg",
+    image: "/parts-images/wiper.webp",
     description:
       "Aerodynamic flat wiper blades for streak-free, all-weather clearing. Tool-free fitting with multi-adaptor connectors.",
     rating: 4.5,
@@ -179,7 +181,7 @@ export const products: Product[] = [
     title: "Wing Mirror Glass",
     price: 22.99,
     category: "Exterior",
-    image: "/products/item-15.svg",
+    image: "/parts-images/mirror.webp",
     description:
       "Replacement wing mirror glass with backing plate and heated element connectors. Clip-on fitment for a fast, secure repair.",
     rating: 4.2,
@@ -190,7 +192,7 @@ export const products: Product[] = [
     title: "Fuel Pump",
     price: 79.99,
     category: "Engine",
-    image: "/products/item-16.svg",
+    image: "/parts-images/fuelpump.webp",
     description:
       "In-tank electric fuel pump delivering steady pressure and flow for smooth running. Tested for reliability and long service life.",
     rating: 4.6,

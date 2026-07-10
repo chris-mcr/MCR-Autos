@@ -16,4 +16,5 @@ yarn-error.log*
 .pnpm-debug.log*
 .turbo/
 .claude
-
+claude.md
+.glitch/

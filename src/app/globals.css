@@ -105,6 +105,16 @@ body {
   animation: fadeIn 0.4s ease forwards;
 }
 
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 .anim-d1 { animation-delay: 60ms;  }
 .anim-d2 { animation-delay: 120ms; }
 .anim-d3 { animation-delay: 180ms; }

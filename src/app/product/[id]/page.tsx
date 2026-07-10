@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter, useParams } from "next/navigation";
 import CartButton from "@/components/CartButton";
 import { getProduct, type Product as Item } from "@/lib/products";
@@ -241,8 +242,8 @@ export default function ProductPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 card p-8" role="region" aria-label="Product details">
           {/* Image column */}
           <div className="flex flex-col items-center justify-center gap-4">
-            <div className="w-full rounded-lg overflow-hidden flex items-center justify-center" style={{ background: 'var(--bg-overlay)' }}>
-              <img src={item.image} alt={item.title} className="w-full h-auto object-cover" />
+            <div className="relative w-full aspect-square rounded-lg overflow-hidden" style={{ background: 'var(--bg-overlay)' }}>
+              <Image src={item.image} alt={item.title} fill priority sizes="(min-width:768px) 50vw, 100vw" className="object-cover" />
             </div>
             <button
               onClick={handleToggleFavorite}

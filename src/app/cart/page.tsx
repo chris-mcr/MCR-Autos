@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Navigation from "@/components/Navigation";
 
@@ -464,7 +465,7 @@ export default function CartPage() {
                           className="flex gap-4 pb-4 last:pb-0"
                           style={{ borderBottom: '1px solid var(--edge)' }}
                         >
-                          <img src={item.image} alt={item.title} className="w-14 h-14 flex-shrink-0 rounded object-cover" style={{ background: 'var(--bg-overlay)' }} />
+                          <Image src={item.image} alt={item.title} width={56} height={56} className="w-14 h-14 flex-shrink-0 rounded object-cover" style={{ background: 'var(--bg-overlay)' }} />
                           <div className="flex-1 min-w-0">
                             <h3 className="font-semibold text-sm" style={{ color: 'var(--text-1)' }}>{item.title}</h3>
                             <p className="text-xs mt-0.5 font-code" style={{ color: 'var(--text-3)' }}>{item.category}</p>
