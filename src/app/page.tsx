@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Navigation from "@/components/Navigation";
 import Carousel from "@/components/Carousel";
+import ImageCarousel from "@/components/ImageCarousel";
 import PartFinder from "@/components/PartFinder";
 import Accordion from "@/components/Accordion";
 import Icon from "@/components/Icon";
@@ -185,6 +186,24 @@ export default function Home() {
               </Link>
             ))}
           </Carousel>
+        </div>
+      </section>
+
+      {/* ── Image carousel ── */}
+      <section className="py-16" style={{ borderTop: "1px solid var(--edge)" }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-display text-3xl lg:text-4xl mb-8" style={{ color: "var(--text-1)" }}>
+            Popular parts
+          </h2>
+          <ImageCarousel
+            images={[
+              "/parts-images/brakepads.webp",
+              "/parts-images/oilfilter.webp",
+              "/parts-images/battery.webp",
+            ]}
+            alt="Popular car parts"
+            showIndicators
+          />
         </div>
       </section>
 

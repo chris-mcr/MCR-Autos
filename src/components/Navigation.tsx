@@ -33,9 +33,9 @@ export default function Navigation({
   };
 
   const navLinks = [
-    { href: "/dashboard", label: "Dashboard", show: user },
-    { href: "/shop",      label: "Shop",      show: true },
-    { href: "/account",   label: "Account",   show: user },
+    { href: "/dashboard", label: "Dashboard", show: user, testId: "nav-dashboard" },
+    { href: "/shop",      label: "Shop",      show: true,  testId: "nav-shop" },
+    { href: "/account",   label: "Account",   show: user, testId: "nav-account" },
   ];
 
   const getLinkClasses = (page: string) => {
@@ -48,6 +48,8 @@ export default function Navigation({
   const inactiveLinkStyle = { color: 'var(--text-2)' } as React.CSSProperties;
   const activeLinkStyle   = { color: 'var(--accent)' } as React.CSSProperties;
   const getLinkStyle = (page: string) => currentPage === page ? activeLinkStyle : inactiveLinkStyle;
+
+  const getNavTestId = (href: string) => href === "/" ? "nav-home" : `nav-${href.split("/")[1]}`;
 
   return (
     <nav
@@ -87,7 +89,7 @@ export default function Navigation({
                         href={link.href}
                         className={getLinkClasses(link.href.split("/")[1])}
                         style={getLinkStyle(link.href.split("/")[1])}
-                        data-testid={`nav-${link.href.split("/")[1]}-link`}
+                        data-testid={getNavTestId(link.href)}
                         aria-label={link.label}
                         aria-current={currentPage === link.href.split("/")[1] ? "page" : undefined}
                       >
@@ -178,7 +180,7 @@ export default function Navigation({
                     color: currentPage === link.href.split("/")[1] ? 'var(--accent)' : 'var(--text-2)',
                     background: currentPage === link.href.split("/")[1] ? 'var(--accent-dim)' : 'transparent',
                   }}
-                  data-testid={`nav-${link.href.split("/")[1]}-link-mobile`}
+                  data-testid={`${getNavTestId(link.href)}-mobile`}
                   onClick={() => setMobileMenuOpen(false)}
                   aria-label={link.label}
                   aria-current={currentPage === link.href.split("/")[1] ? "page" : undefined}
