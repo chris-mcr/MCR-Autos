@@ -318,7 +318,7 @@ export default function CartPage() {
         shippingInfo: shippingData,
       };
 
-      // Add order to Firebase
+      // Save the order
       const response = await fetch("/api/orders", {
         method: "POST",
         headers: {

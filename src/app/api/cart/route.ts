@@ -7,7 +7,7 @@ import {
   clearCart,
   setCart,
   CartItem,
-} from "@/lib/firebaseService";
+} from "@/lib/store";
 
 export async function GET(request: NextRequest) {
   try {

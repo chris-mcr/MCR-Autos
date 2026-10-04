@@ -18,14 +18,11 @@ export default function ShopPage() {
   const isLoadingFavoritesRef = useRef(false);
 
   useEffect(() => {
+    // Browsing is public; only cart and favourites need a login.
     const userData = localStorage.getItem("user");
-    if (!userData) {
-      router.push("/login");
-      return;
-    }
-    setUser(JSON.parse(userData));
+    if (userData) setUser(JSON.parse(userData));
     loadFavorites();
-  }, [router]);
+  }, []);
 
   const loadFavorites = async () => {
     if (isLoadingFavoritesRef.current) return;
@@ -53,7 +50,10 @@ export default function ShopPage() {
     setAddingToCart(item.id);
     try {
       const userData = localStorage.getItem("user");
-      if (!userData) return;
+      if (!userData) {
+        router.push("/login");
+        return;
+      }
       const { id: userId } = JSON.parse(userData);
       const response = await fetch("/api/cart", {
         method: "POST",
@@ -74,7 +74,10 @@ export default function ShopPage() {
   const handleToggleFavorite = async (item: Item) => {
     try {
       const userData = localStorage.getItem("user");
-      if (!userData) return;
+      if (!userData) {
+        router.push("/login");
+        return;
+      }
       const { id: userId } = JSON.parse(userData);
       const isFavorited = favorites.has(item.id);
       setLoadingFavorites((prev) => new Set(prev).add(item.id));
@@ -119,11 +122,9 @@ export default function ShopPage() {
     router.push("/");
   };
 
-  if (!user) return null;
-
   return (
     <div className="min-h-screen" style={{ background: 'var(--bg-base)' }} role="application" aria-label="Shop page">
-      <Navigation currentPage="shop" showCart={true} user={user} onLogout={handleLogout} />
+      <Navigation currentPage="shop" showCart={!!user} user={user} onLogout={handleLogout} />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {/* Search and filters */}

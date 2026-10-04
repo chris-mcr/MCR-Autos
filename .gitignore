@@ -19,4 +19,6 @@ yarn-error.log*
 claude.md
 .glitch/
 .shelby/    
-SHELBY.md   
+SHELBY.md
+.data/
+test-results/

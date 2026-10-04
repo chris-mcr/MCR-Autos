@@ -6,7 +6,7 @@ import {
   updateOrderStatus,
   setOrders,
   Order,
-} from "@/lib/firebaseService";
+} from "@/lib/store";
 
 export async function GET(request: NextRequest) {
   try {

@@ -36,7 +36,7 @@ A set of demo customer accounts is defined in `src/app/api/auth/login/route.ts`.
 | `src/components/` | Shared UI components — navigation, cart button, carousel, part finder, accordion, icons |
 | `src/lib/products.ts` | The product catalogue — single source of truth for all parts |
 | `src/lib/vehicles.ts` | Make/model data for the homepage part finder |
-| `src/lib/firebase*.ts` | Optional Firebase persistence |
+| `src/lib/store.ts` | SQLite persistence for cart, orders, favourites and recently viewed |
 | `public/parts-images/` | Product, category and hero images |
 
 ## The catalogue
@@ -47,18 +47,8 @@ Product images live in `public/parts-images/` and are referenced by each part's 
 
 ## Data persistence
 
-By default, cart, order and favourite data is held in memory and resets when the server restarts. To persist data, add Firebase config to `.env.local`:
-
-```
-NEXT_PUBLIC_FIREBASE_API_KEY=
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
-NEXT_PUBLIC_FIREBASE_DATABASE_URL=
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
-NEXT_PUBLIC_FIREBASE_APP_ID=
-```
+Cart, order, favourite and recently-viewed data is stored in a local SQLite file at `.data/store.db` (git-ignored), using Node's built-in `node:sqlite` — no setup needed. Requires Node 22.5+. Delete the file to reset all data.
 
 ## Tech stack
 
-Next.js 15 (App Router) · React 19 · TypeScript · Tailwind CSS · Firebase (optional)
+Next.js 15 (App Router) · React 19 · TypeScript · Tailwind CSS · SQLite (`node:sqlite`)

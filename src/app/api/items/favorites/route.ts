@@ -5,7 +5,7 @@ import {
   removeFavorite,
   isFavorited,
   OrderItem,
-} from "@/lib/firebaseService";
+} from "@/lib/store";
 
 export async function GET(request: NextRequest) {
   try {

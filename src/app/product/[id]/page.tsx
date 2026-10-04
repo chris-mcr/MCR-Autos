@@ -21,12 +21,9 @@ export default function ProductPage() {
   const [cartAdded, setCartAdded] = useState(false);
 
   useEffect(() => {
+    // Browsing is public; only cart and favourites need a login.
     const userData = localStorage.getItem("user");
-    if (!userData) {
-      router.push("/login");
-      return;
-    }
-    setUser(JSON.parse(userData));
+    if (userData) setUser(JSON.parse(userData));
 
     // Find the product
     const product = getProduct(productId);
@@ -96,7 +93,10 @@ export default function ProductPage() {
     setFavoriteLoading(true);
     try {
       const userData = localStorage.getItem("user");
-      if (!userData) return;
+      if (!userData) {
+        router.push("/login");
+        return;
+      }
 
       const { id: userId } = JSON.parse(userData);
       const response = await fetch("/api/items/favorites", {
@@ -128,7 +128,10 @@ export default function ProductPage() {
     setAddingToCart(true);
     try {
       const userData = localStorage.getItem("user");
-      if (!userData) return;
+      if (!userData) {
+        router.push("/login");
+        return;
+      }
 
       const { id: userId } = JSON.parse(userData);
       const response = await fetch("/api/cart", {
@@ -167,7 +170,7 @@ export default function ProductPage() {
     router.push("/login");
   };
 
-  if (!item || !user) {
+  if (!item) {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ background: 'var(--bg-base)' }}>
         <p className="font-code text-sm" style={{ color: 'var(--text-3)' }}>Loading…</p>
@@ -195,8 +198,8 @@ export default function ProductPage() {
             <span className="font-code text-sm" style={{ color: 'var(--text-3)' }}>autos</span>
           </button>
           <div className="flex items-center gap-4">
-            <CartButton />
-            <button
+            {user && <CartButton />}
+            {user ? <button
               onClick={handleLogout}
               data-testid="logout-button"
               aria-label="Log out of account"
@@ -206,7 +209,11 @@ export default function ProductPage() {
               onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-3)')}
             >
               Logout
-            </button>
+            </button> : (
+              <Link href="/login" data-testid="signin-button" aria-label="Sign in to your account" className="btn-amber">
+                Sign In
+              </Link>
+            )}
           </div>
         </div>
       </header>
@@ -214,7 +221,7 @@ export default function ProductPage() {
       <nav style={{ background: 'rgba(15,15,15,0.96)', borderBottom: '1px solid var(--edge)' }} role="navigation" aria-label="Main navigation">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex">
-            {[{ href: '/dashboard', label: 'Dashboard' }, { href: '/shop', label: 'Shop', active: true }, { href: '/account', label: 'Account' }].map((link) => (
+            {[{ href: '/dashboard', label: 'Dashboard' }, { href: '/shop', label: 'Shop', active: true }, { href: '/account', label: 'Account' }].filter((link) => user || link.href === '/shop').map((link) => (
               <Link
                 key={link.href}
                 href={link.href}

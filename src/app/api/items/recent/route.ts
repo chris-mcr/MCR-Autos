@@ -4,7 +4,7 @@ import {
   addRecentlyViewed,
   clearRecentlyViewed,
   OrderItem,
-} from "@/lib/firebaseService";
+} from "@/lib/store";
 
 export async function GET(request: NextRequest) {
   try {
