@@ -7,7 +7,7 @@ test.describe('Login flow', () => {
   });
 
   test('should login successfully with valid credentials', async ({ page }) => {
-    await login(page, 'test@example.com', 'password123');
+    await login(page, 'chris@mcrautos.com', 'password123');
     
     await expect(page).toHaveURL('/dashboard');
     await expect(page.getByTestId('nav-dashboard')).toBeVisible();
@@ -41,9 +41,9 @@ test.describe('Login flow', () => {
   });
 
   test('should logout successfully', async ({ page }) => {
-    await login(page, 'test@example.com', 'password123');
+    await login(page, 'chris@mcrautos.com', 'password123');
     await logout(page);
     
-    await expect(page).toHaveURL('/login');
+    await expect(page).toHaveURL('/');
   });
 });

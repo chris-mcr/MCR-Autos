@@ -49,7 +49,7 @@ export async function addToCart(page: Page, productId: string, quantity = 1) {
 export async function logout(page: Page) {
   await page.goto('/account');
   await page.getByTestId('logout-button').click();
-  await page.waitForURL('/login');
+  await page.waitForURL('/');
 }
 
 export async function navigateToShop(page: Page) {
