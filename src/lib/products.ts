@@ -9,6 +9,11 @@ export interface Product {
   description: string;
   rating: number;
   stock: number;
+  // Which vehicles the part fits: make -> models, using the names in lib/vehicles.ts. An empty
+  // list means every model of that make. Leave `fits` out and the part is universal (it suits
+  // any vehicle). Nothing reads this yet: the part finder saves the chosen vehicle in
+  // localStorage ("vehicle"), and using the two together is an attendee task.
+  fits?: Record<string, string[]>;
 }
 
 export const categories = [
@@ -197,6 +202,188 @@ export const products: Product[] = [
       "In-tank electric fuel pump delivering steady pressure and flow for smooth running. Tested for reliability and long service life.",
     rating: 4.6,
     stock: 24,
+  },
+  {
+    id: "item-17",
+    title: "Performance Drilled and Grooved Brake Discs (Pair)",
+    price: 139.99,
+    category: "Brakes",
+    image: "/parts-images/brakediscs.webp",
+    description:
+      "Cross-drilled and slotted front discs that shed heat and gas for firmer, more consistent braking on fast roads and track days. A popular upgrade for hot hatches such as the Ford Focus, VW Golf and Audi A3.",
+    rating: 4.7,
+    stock: 22,
+    fits: { Ford: ["Focus"], Volkswagen: ["Golf"], Audi: ["A3"] },
+  },
+  {
+    id: "item-18",
+    title: "Fast Road Performance Brake Pads (Set of 4)",
+    price: 64.99,
+    category: "Brakes",
+    image: "/parts-images/brakepads.webp",
+    description:
+      "High-friction fast road compound with strong initial bite and excellent fade resistance when driven hard. Pairs with the performance discs for a complete front brake upgrade.",
+    rating: 4.6,
+    stock: 35,
+    fits: { Ford: ["Focus"], Volkswagen: ["Golf"], Audi: ["A3"] },
+  },
+  {
+    id: "item-19",
+    title: "High-Temperature Brake Fluid DOT 5.1 (1L)",
+    price: 15.99,
+    category: "Brakes",
+    image: "/parts-images/oil.webp",
+    description:
+      "High boiling point brake fluid that resists fade under repeated hard stops. Compatible with DOT 4 systems and a sensible upgrade whenever the pads and discs are changed.",
+    rating: 4.5,
+    stock: 88,
+  },
+  {
+    id: "item-20",
+    title: "Front Brake Pads - Ford Focus and Fiesta",
+    price: 39.99,
+    category: "Brakes",
+    image: "/parts-images/brakepads.webp",
+    description:
+      "Low-dust ceramic front pads matched to the Ford Fiesta and Focus. Supplied with wear indicators and fitting hardware for a quick like-for-like replacement.",
+    rating: 4.4,
+    stock: 52,
+    fits: { Ford: ["Fiesta", "Focus"] },
+  },
+  {
+    id: "item-21",
+    title: "Performance Panel Air Filter (Washable)",
+    price: 34.99,
+    category: "Filters",
+    image: "/parts-images/airfilter.webp",
+    description:
+      "Reusable high-flow cotton gauze panel filter that improves airflow without losing filtration. Wash and re-oil it at service time instead of replacing it.",
+    rating: 4.5,
+    stock: 61,
+  },
+  {
+    id: "item-22",
+    title: "Oil Filter - VW Golf, Polo and Audi A3",
+    price: 10.99,
+    category: "Filters",
+    image: "/parts-images/oilfilter.webp",
+    description:
+      "Spin-on oil filter with an anti-drain-back valve, picked for popular Volkswagen Group petrol engines found in the Golf, Polo and Audi A3.",
+    rating: 4.7,
+    stock: 134,
+    fits: { Volkswagen: ["Golf", "Polo"], Audi: ["A3"] },
+  },
+  {
+    id: "item-23",
+    title: "Iridium Performance Spark Plugs (Set of 4)",
+    price: 39.99,
+    category: "Engine",
+    image: "/parts-images/spark.webp",
+    description:
+      "Fine-wire iridium plugs for a stable spark, crisp throttle response and long service life. Well suited to tuned and turbocharged engines.",
+    rating: 4.8,
+    stock: 74,
+  },
+  {
+    id: "item-24",
+    title: "Fully Synthetic Racing Oil 5W-40 (5L)",
+    price: 49.99,
+    category: "Engine",
+    image: "/parts-images/oil.webp",
+    description:
+      "Fully synthetic 5W-40 with strong shear stability for hard driving, track days and uprated engines. Keeps its film strength at high temperatures.",
+    rating: 4.7,
+    stock: 66,
+  },
+  {
+    id: "item-25",
+    title: "High-Flow Fuel Pump - Performance",
+    price: 109.99,
+    category: "Engine",
+    image: "/parts-images/fuelpump.webp",
+    description:
+      "Uprated in-tank pump with higher flow for modified engines running more power. Direct fit for the standard tank module.",
+    rating: 4.5,
+    stock: 14,
+  },
+  {
+    id: "item-26",
+    title: "Ultra White Headlight Bulbs (Pair)",
+    price: 24.99,
+    category: "Electrical",
+    image: "/parts-images/bulb.webp",
+    description:
+      "Brighter, whiter light than standard halogen bulbs, with a longer beam for better night-time visibility. Road legal and plug-and-play.",
+    rating: 4.4,
+    stock: 97,
+  },
+  {
+    id: "item-27",
+    title: "AGM Start-Stop Battery 12V 70Ah",
+    price: 139.99,
+    category: "Electrical",
+    image: "/parts-images/battery.webp",
+    description:
+      "Deep-cycle AGM battery built for vehicles with start-stop systems, such as the Ford Focus, VW Golf and BMW 3 Series. Spill-proof and maintenance free.",
+    rating: 4.6,
+    stock: 18,
+    fits: { Ford: ["Focus"], Volkswagen: ["Golf"], BMW: ["3 Series"] },
+  },
+  {
+    id: "item-28",
+    title: "Sport Lowering Springs (Set of 4)",
+    price: 149.99,
+    category: "Suspension",
+    image: "/parts-images/spring.webp",
+    description:
+      "Progressive-rate springs that lower the ride height for a sharper stance and tighter handling, while keeping everyday comfort. Fits with the standard dampers.",
+    rating: 4.5,
+    stock: 17,
+  },
+  {
+    id: "item-29",
+    title: "Adjustable Sport Coilover Kit",
+    price: 449.99,
+    category: "Suspension",
+    image: "/parts-images/shock.webp",
+    description:
+      "Height-adjustable coilovers with tuned damping for fast road and track use. Dial in ride height and stiffness to suit the car and the driver.",
+    rating: 4.7,
+    stock: 9,
+  },
+  {
+    id: "item-30",
+    title: "Front Anti-Roll Bar Drop Links (Pair)",
+    price: 29.99,
+    category: "Suspension",
+    image: "/parts-images/shock.webp",
+    description:
+      "Heavy-duty drop links that reduce body roll and remove clunks from worn bushes. A cheap fix that sharpens turn-in on most hatchbacks.",
+    rating: 4.3,
+    stock: 80,
+  },
+  {
+    id: "item-31",
+    title: "Carbon-Effect Wing Mirror Covers (Pair)",
+    price: 27.99,
+    category: "Exterior",
+    image: "/parts-images/mirror.webp",
+    description:
+      "Clip-on carbon-effect covers that give your mirrors a sportier look. Quick to fit with no tools and no drilling.",
+    rating: 4.2,
+    stock: 40,
+  },
+  {
+    id: "item-32",
+    title: "Aero Flat Wiper Blades - VW Golf and Polo",
+    price: 21.99,
+    category: "Exterior",
+    image: "/parts-images/wiper.webp",
+    description:
+      "Flat-blade wipers matched to the Volkswagen Golf and Polo. Streak-free in heavy rain and quiet at speed.",
+    rating: 4.5,
+    stock: 120,
+    fits: { Volkswagen: ["Golf", "Polo"] },
   },
 ];
 

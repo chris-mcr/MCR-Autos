@@ -17,7 +17,7 @@ The app already has Playwright set up and a few specs in `e2e/` (`cart-api`, `gu
 - Browsing (`/`, `/shop`, `/product/[id]`) is public. `/cart`, `/account` and `/dashboard` redirect to `/login` in a `useEffect` when `"user"` is absent — assert that redirect for the logged-out case. Add-to-cart while logged out also goes to `/login`.
 - **Selectors: prefer `getByTestId`.** The app has many `data-testid`s: `search-input`, `products-grid`, `product-<id>`, `product-title-<id>`, `add-to-cart-<id>`, `favorite-button-<id>`, `filter-<Category>`, `nav-shop` / `nav-cart` / `nav-account`, `email-input`, `password-input`, `login-button`, `proceed-checkout`, `place-order-button`. **Check an id exists with `search` before using it.** Some ids in `src/lib/playwright.ts` (e.g. `product-add-to-cart`, `cart-item`) don't exist in the app. Add a `data-testid` to a new element rather than matching on styling.
 - **Data persists** in `.data/store.db` between tests. For API or cart tests use a unique user id, e.g. `` `e2e-${Date.now()}` ``, as `e2e/cart-api.spec.ts` does, so runs don't interfere.
-- Product ids are `item-1` … `item-16` (see `src/lib/products.ts`).
+- Product ids are `item-1` … `item-32` (see `src/lib/products.ts`).
 
 ## Example
 ```ts

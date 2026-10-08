@@ -10,7 +10,7 @@ An online car-parts store: find parts by vehicle make/model, browse and search b
   - `src/app/api/*/route.ts` — `auth/login`, `cart`, `orders`, `items/favorites`, `items/recent`.
 - `src/components/` — reusable UI, one component per file, PascalCase, default export: `Navigation`, `CartButton`, `Carousel`, `ImageCarousel`, `PartFinder`, `Accordion`, `Icon`.
 - `src/lib/`:
-  - `products.ts` — the catalogue: `Product` type, `categories`, the hardcoded `products` array (`item-1` … `item-16`) and `getProduct(id)`. Add a product here and it flows to shop, product detail, cart and dashboard.
+  - `products.ts` — the catalogue: `Product` type, `categories`, the hardcoded `products` array (`item-1` … `item-32`) and `getProduct(id)`. A part may carry an optional `fits` (make → models, an empty list = every model of that make); a part without `fits` suits every vehicle. Nothing reads `fits` yet. Add a product here and it flows to shop, product detail, cart and dashboard.
   - `vehicles.ts` — make→model data for the part finder: `vehicles`, `makes`, `modelsFor(make)`.
   - `store.ts` — all database access (orders, cart, favourites, recently viewed). Exports the `Order`, `OrderItem` and `CartItem` types.
   - `playwright.ts` — helpers for the e2e tests (`TEST_IDS`, `login`, `logout`, …). Some ids in it no longer exist in the app; check the real `data-testid` before relying on one.

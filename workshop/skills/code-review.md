@@ -18,7 +18,7 @@ Review changed code for correctness and quality. Bugs first, cleanups second. Be
 5. **React/Next pitfalls** — missing `key` in a list, `useEffect` with wrong/missing deps, mutating state directly, fetching in `useEffect` for static data that could render on the server.
 
 ## How to review
-1. `git diff` (via run_command) to see what changed; if nothing's changed, ask what to review.
+1. `git diff HEAD` (via run_command) to see staged and unstaged changes (plain `git diff` misses staged ones; use it only if the repo has no commits yet), and `git status --short` for new untracked files, which you read with read_file. If nothing has changed, ask what to review.
 2. Read the full files around the diff — a change is only correct in context.
 3. Report worst-first. For each: **severity** · file:line · the problem · the concrete fix (show the corrected line).
 4. Separate real bugs from nits. Don't drown a genuine bug in style nags. If it's clean, say so in one line — don't invent findings.

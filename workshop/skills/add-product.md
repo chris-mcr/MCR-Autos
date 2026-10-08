@@ -3,10 +3,10 @@
 The catalogue is a static array in `src/lib/products.ts` — the single source of truth. Add or edit an entry there and it flows to shop, product detail, cart, and dashboard automatically. There is no product database and no API call to make.
 
 ## Add a product
-1. Add an object to the `products` array in `src/lib/products.ts`. Every field of the `Product` type is required:
+1. Add an object to the `products` array in `src/lib/products.ts`. Every field of the `Product` type is required except `fits`:
    ```ts
    {
-     id: "item-17",                        // unique; follow the "item-N" pattern (check the last id first)
+     id: "item-33",                        // unique; follow the "item-N" pattern (check the last id first)
      title: "Rear Wiper Blade",
      price: 12.99,                          // number, GBP
      category: "Exterior",                  // must be one of `categories` (minus "All")
@@ -14,6 +14,7 @@ The catalogue is a static array in `src/lib/products.ts` — the single source o
      description: "…",
      rating: 4.5,                           // 0–5
      stock: 120,
+     fits: { Volkswagen: ["Golf", "Polo"] },  // optional: vehicles it fits (make -> models, [] = all models). Omit for a universal part
    }
    ```
 2. **`category` must already exist** in the `categories` array at the top of the file (Brakes, Filters, Engine, Electrical, Suspension, Exterior), or the shop's category filter won't show it. Adding a genuinely new category = add the string to `categories` too.
